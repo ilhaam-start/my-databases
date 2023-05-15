@@ -9,9 +9,9 @@ def test_cohort_construct():
     assert cohort.name == "Data Engineering"
     assert cohort.starting_date == "04/2023"
 
-# """
-# Test the format as string
-# """
-# def test_format_as_string():
-#     cohort = Cohort(1, "Data Engineering", 04/2023)
-#     assert str(cohort) == "1 - Data Engineering - 04/2023"
+"""
+Test the format as string
+"""
+def test_format_as_string():
+    cohort = Cohort(1, "Data Engineering", "04/2023")
+    assert str(cohort) == "1 - Data Engineering - 04/2023"
