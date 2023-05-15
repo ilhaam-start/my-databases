@@ -22,14 +22,14 @@ class Application():
         print("Here is the list of albums:")
 
         for artist in artists:
-            print(f"{artist.id}: {artist.name} ({artist.genre})")
+            print(f" * {artist.id}: {artist.name} ({artist.genre})")
         
         album_repository = AlbumRepository(self._connection)
         albums = album_repository.all()
         print("Here is the list of albums:")
 
         for album in albums:
-            print(f"{album.id}: {album.title}, {album.release_year}, {album.artist_id}")
+            print(f" * {album.id} - {album.title} - {album.release_year}, {album.artist_id}")
 
         print("Welcome to the music library manager!")
         print()
