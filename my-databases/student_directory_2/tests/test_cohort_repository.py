@@ -1,6 +1,7 @@
 from lib.cohort_repository import *
 from lib.cohort import *
 
+
 """
 when #all is called, this gets all the cohorts back in a list
 """

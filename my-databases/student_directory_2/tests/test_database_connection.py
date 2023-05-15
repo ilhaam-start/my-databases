@@ -1,4 +1,13 @@
+import pytest
+from lib.database_connection import *
 # This is an example of how to use the DatabaseConnection class
+
+@pytest.fixture
+def db_connection():
+    connection = DatabaseConnection()
+    connection.connect()
+    connection.seed("seeds/database_connection.sql")
+    return connection
 
 """
 When I seed the database

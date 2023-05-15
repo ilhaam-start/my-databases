@@ -23,10 +23,10 @@ CREATE TABLE students (
       on delete cascade
 );
 
-INSERT INTO cohorts (name, starting_date) VALUES ('Data Engineering', 04/2023);
-INSERT INTO cohorts (name, starting_date) VALUES ('Software Engineering', 05/2023);
-INSERT INTO cohorts (name, starting_date) VALUES ('Quality Engineering', 04/2023);
-INSERT INTO cohorts (name, starting_date) VALUES ('DevOps', 02/2023);
+INSERT INTO cohorts (name, starting_date) VALUES ('Data Engineering', '04/2023');
+INSERT INTO cohorts (name, starting_date) VALUES ('Software Engineering', '05/2023');
+INSERT INTO cohorts (name, starting_date) VALUES ('Quality Engineering', '04/2023');
+INSERT INTO cohorts (name, starting_date) VALUES ('DevOps', '02/2023');
 
 INSERT INTO students (name, cohort_id) VALUES ('Student1', 1);
 INSERT INTO students (name, cohort_id) VALUES ('Student2', 1);
