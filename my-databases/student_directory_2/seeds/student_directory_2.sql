@@ -23,16 +23,16 @@ CREATE TABLE students (
       on delete cascade
 );
 
-INSERT INTO cohorts (name, starting_date) VALUES ('Data Engineering', 04/2023)
-INSERT INTO cohorts (name, starting_date) VALUES ('Software Engineering', 05/2023)
-INSERT INTO cohorts (name, starting_date) VALUES ('Quality Engineering', 04/2023)
-INSERT INTO cohorts (name, starting_date) VALUES ('DevOps', 02/2023)
+INSERT INTO cohorts (name, starting_date) VALUES ('Data Engineering', 04/2023);
+INSERT INTO cohorts (name, starting_date) VALUES ('Software Engineering', 05/2023);
+INSERT INTO cohorts (name, starting_date) VALUES ('Quality Engineering', 04/2023);
+INSERT INTO cohorts (name, starting_date) VALUES ('DevOps', 02/2023);
 
-INSERT INTO students (name, cohort_id) VALUES ('Student1', 1)
-INSERT INTO students (name, cohort_id) VALUES ('Student2', 1)
-INSERT INTO students (name, cohort_id) VALUES ('Student3', 2)
-INSERT INTO students (name, cohort_id) VALUES ('Student4', 3)
-INSERT INTO students (name, cohort_id) VALUES ('Student5', 3)
-INSERT INTO students (name, cohort_id) VALUES ('Student6', 4)
-INSERT INTO students (name, cohort_id) VALUES ('Student7', 2)
-INSERT INTO students (name, cohort_id) VALUES ('Student8', 1)
+INSERT INTO students (name, cohort_id) VALUES ('Student1', 1);
+INSERT INTO students (name, cohort_id) VALUES ('Student2', 1);
+INSERT INTO students (name, cohort_id) VALUES ('Student3', 2);
+INSERT INTO students (name, cohort_id) VALUES ('Student4', 3);
+INSERT INTO students (name, cohort_id) VALUES ('Student5', 3);
+INSERT INTO students (name, cohort_id) VALUES ('Student6', 4);
+INSERT INTO students (name, cohort_id) VALUES ('Student7', 2);
+INSERT INTO students (name, cohort_id) VALUES ('Student8', 1);
