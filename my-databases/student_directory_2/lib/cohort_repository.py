@@ -13,11 +13,11 @@ class CohortRepository:
             cohorts.append(item)
         return cohorts
     
-    # def find(self, book_id):
-    #     rows = self._connection.execute('SELECT * FROM books WHERE id = %s', [book_id])
-    #     row = rows[0]
-    #     item = Book(row["id"], row["title"], row["author_name"])
-    #     return item
+    def find(self, id):
+        rows = self._connection.execute('SELECT * FROM cohorts WHERE id = %s', [id])
+        row = rows[0]
+        item = Cohort(row["id"], row["name"], row["starting_date"])
+        return item
     
     # def create(self, title, author_name):
     #     self._connection.execute('INSERT INTO books (title, author_name) VALUES (%s, %s)', [title, author_name])

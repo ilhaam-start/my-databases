@@ -15,3 +15,12 @@ def test_get_all_records(db_connection):
         "3 - Quality Engineering - 04/2023",
         "4 - DevOps - 02/2023"
     ]
+
+"""
+when #find is called, the item is returned.
+"""
+def test_find_get_item(db_connection):
+    db_connection.seed("seeds/student_directory_2.sql")
+    repo = CohortRepository(db_connection)
+    cohorts = repo.find(1)
+    assert str(cohorts) == "1 - Data Engineering - 04/2023"
