@@ -19,8 +19,11 @@ def main():
 
         if choice == "1":
             items = shop_items.list_shop_items(connection)
-            for item in items:
-                print("#{} {} - Unit price: {} - Quantity: {}".format(item[0], item[1], item[2], item[3]))
+            if items:
+                for item in items:
+                    print("#{} {} - Unit price: {} - Quantity: {}".format(item[0], item[1], item[2], item[3]))
+            else: 
+                print("No items founds in the shop")
         elif choice == "2":
             shop_items.create_shop_item(connection)
         elif choice == "3":
