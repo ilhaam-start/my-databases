@@ -1,5 +1,6 @@
 from lib.cohort_repository import *
 from lib.cohort import *
+from tests.test_database_connection import *
 
 
 """
@@ -24,3 +25,12 @@ def test_find_get_item(db_connection):
     repo = CohortRepository(db_connection)
     cohorts = repo.find(1)
     assert str(cohorts) == "1 - Data Engineering - 04/2023"
+
+"""
+when #find_with_students is called, the cohort item is returned.
+"""
+def test_find_with_student_get_item(db_connection):
+    db_connection.seed("seeds/student_directory_2.sql")
+    repo = CohortRepository(db_connection)
+    cohort = repo.find_with_students(1)
+    assert str(cohort) == "1 - Student1 - 04/2023", "1 - Data Engineering - 04/2023"

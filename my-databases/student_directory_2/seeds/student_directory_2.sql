@@ -10,7 +10,7 @@ CREATE SEQUENCE IF NOT EXISTS cohorts_id_seq;
 CREATE TABLE cohorts (
   id SERIAL PRIMARY KEY,
   name text,
-  starting_date int
+  starting_date text
 );
 
 CREATE SEQUENCE IF NOT EXISTS students_id_seq;

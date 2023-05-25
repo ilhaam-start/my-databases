@@ -19,6 +19,19 @@ class CohortRepository:
         item = Cohort(row["id"], row["name"], row["starting_date"])
         return item
     
+    def find_with_students(self, id):
+        rows = self._connection.execute(
+            "SELECT cohorts.id as cohort_id, cohorts.name, cohorts.starting_date, students.id AS student_id, students.name " \
+            "FROM cohorts JOIN students ON cohorts.id = students.cohort_id " \
+            "WHERE cohorts.id = %s", [id]
+            )
+        students =[]
+        for row in rows:
+            student = Student(row["student_id"], row["name"], row["cohort_id"])
+            students.append(student)
+        return Cohort(rows[0]["cohort_id"], rows[0]["name"], rows[0]["starting_date"], students=students)
+
+    
     # def create(self, title, author_name):
     #     self._connection.execute('INSERT INTO books (title, author_name) VALUES (%s, %s)', [title, author_name])
     #     return None
