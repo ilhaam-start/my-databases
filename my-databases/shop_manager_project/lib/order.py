@@ -5,13 +5,14 @@ class Order:
         self.order_date = order_date
 
     def save(self, db_connection):
-        query = "INSERT INTO orders (customer_name, item_id, order_date) VALUES (?, ?, ?)"
+        query = "INSERT INTO orders (customer_name, item_id, order_date) VALUES (%s, %s, %s)"
         parameters = (self.customer_name, self.item_id, self.order_date)
         db_connection.execute(query, parameters)
 
 def list_orders(db_connection):
     query = "SELECT orders.*, shop_items.name FROM orders INNER JOIN shop_items ON orders.item_id = shop_items.id"
-    return db_connection.execute(query)
+    items = db_connection.execute(query)
+    return [tuple(item.values()) for item in items]
 
 def create_order(db_connection):
     customer_name = input("Enter the customer name: ")

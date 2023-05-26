@@ -1,4 +1,4 @@
-from lib.database_connection import *
+from lib.database_connection import DatabaseConnection
 import lib.shop_item as shop_items
 import lib.order as orders
 
@@ -27,9 +27,9 @@ def main():
         elif choice == "2":
             shop_items.create_shop_item(connection)
         elif choice == "3":
-            orders_list = orders.list_order(connection)
+            orders_list = orders.list_orders(connection)
             for order in orders_list:
-                print("#{} - Customer: {} - Item: {} - Order Date: {}".format(order[0], order[1], order[5], order[3]))
+                print("#{} - Customer: {} - Item: {} - Order Date: {}".format(order[0], order[1], order[2], order[3]))
         elif choice == "4":
             orders.create_order(connection)
         else:
